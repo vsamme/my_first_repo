@@ -6,6 +6,5 @@ README.md:guessinggame.sh
 	echo "`date`\n\n" >> README.md
 
 
-
 	echo  "The no. of lines in *gussinggame.sh* are :" `wc -l < guessinggame.sh` >> README.md
 
