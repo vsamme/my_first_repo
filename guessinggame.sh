@@ -1,4 +1,4 @@
-echo "Welcome to the guessing game"
+echo "Welcome to the Guessing Game"
 echo "Guess the no. of files present in the current directory:"
 read response
 
@@ -8,7 +8,6 @@ local totalfiles=$(ls -ltr | grep "^-" | wc -l)
 
 echo "$totalfiles"
 }
-
 
 nooffiles=$(gettotalnooffiles)
 while [[ $response != $nooffiles ]]
