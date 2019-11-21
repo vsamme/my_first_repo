@@ -1,9 +1,11 @@
-all: README.md
+README.md:guessinggame.sh
+	touch README.md
+	echo " # Bash, Make, Git and GitHub\n" > README.md
 
-README.md:
-	echo '## Peer Graded assignment ##' >> README.md
-	echo '* This makefile was run at: $(shell date +%Y-%m-%d:%H:%M:%S) *' >> README.md
-	echo '* There were $(shell wc -l < guessinggame.sh) lines in guessinggame.sh *' >> README.md
-	echo '# Enjoy the guessing Game! #'>>README.md
-clean:
-	rm README.md
+
+	echo "`date`\n\n" >> README.md
+
+
+
+	echo  "The no. of lines in *gussinggame.sh* are :" `wc -l < guessinggame.sh` >> README.md
+

@@ -1,21 +1,30 @@
-echo "Welcome to guess_numbering Game"
-echo "Enter your guess_numbe: "
-read guess_number
-function get_files {
-	local number=$(ls -l | wc -l)-1
-	echo $number
+echo "Welcome to the guessing game"
+echo "Guess the no. of files present in the current directory:"
+read response
+
+gettotalnooffiles () {
+
+local totalfiles=$(ls -ltr | grep "^-" | wc -l)
+
+echo "$totalfiles"
 }
-correct_number=$(get_files)
-while [[ $guess_number -ne $correct_number ]]
+
+
+nooffiles=$(gettotalnooffiles)
+while [[ $response != $nooffiles ]]
 do
-	if [[ $guess_number -gt $correct_number ]]
-	then
-		echo "Sorry, your guess_number was too high"
-	else 
-		echo "Sorry, your guess_number was too low"
-	fi
-	echo
-	echo "Sorry, Try again: "
-	read guess_number_number
+
+   if [[ $response -gt $nooffiles ]]
+then
+
+   echo "Sorry!! the guess was high"
+else
+   echo "Sorry!! the guess was low"
+fi
+   echo "Guess the no. of files present in the current directory:"
+   read response
 done
-echo "Congratulations! You guess the right number!"
+
+echo "Congratulations!! Guessed correctly"
+exit 1
+
